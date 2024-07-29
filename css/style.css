@@ -945,6 +945,12 @@ body{
     .section5_item{
         padding: 5px;
     }
+    .section5{
+        padding:40px 20px;
+    }
+    .section5_container{
+        width: 100%;
+    }
     .section5_item_capcher{
         padding-right: 5px;
     }

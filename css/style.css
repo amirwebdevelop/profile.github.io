@@ -274,8 +274,9 @@ body{
 
 .theme_item{
     color: var(--color-wight2);
-    font-size: 22px;
+    font-size: 24px;
     cursor: pointer;
+    transition: var(--transition);
 }
 
 .color{
@@ -425,12 +426,8 @@ body{
 .Profile_information_p_span{
     color: var(--color-khas);
     margin-right: 20px;
-    opacity: 0;
-    transition:all 0.5s ease;
 }
-.fade-in{
-    opacity: 1;
-}
+
 .Profile_information_capture{
     line-height: 40px;
 }
@@ -448,9 +445,12 @@ body{
     border-radius: 20px;
     color: var(--color-wight);
     background-color: var(--color-blaclight);
-    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
     line-height: 50px;
     transition: var(--transition);
+    gap: 5px;
 }
 .btn2{
     display: inline-block;
@@ -459,9 +459,12 @@ body{
     border-radius: 20px;
     color: var(--color-wight);
     background-color: var(--color-khas);
-    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
     line-height: 50px;
     transition: var(--transition);
+    gap: 5px;
 }
 
 .btn1:hover{
@@ -629,11 +632,24 @@ body{
     align-items: center;
     justify-content: space-evenly;
 }
-.section4_img{
-    width: 300px;
-    height: 400px;
+
+.zoom-container {
+    overflow: hidden;
+    width: 300px; /* اندازه دلخواه */
+    height: 400px; /* اندازه دلخواه */
     border-radius: 20px;
 }
+
+.section4_img {
+    width: 100%;
+    height: 100%;
+    transition: transform 0.2s; /* انیمیشن زوم */
+}
+
+.zoom-container:hover .section4_img {
+    transform: scale(1.5); /* میزان زوم */
+}
+
 
 /* ////////////////////////////////// */
 
@@ -692,6 +708,9 @@ body{
     font-weight: 100;
     letter-spacing: 1px;
 }
+.section5_item_capcher_title2 a{
+    color: var(--color-wight);
+}
 
 .section5_item:hover .section5_item_icon i{
     color: var(--color-wight);
@@ -731,6 +750,7 @@ body{
     color: var(--color-khas);
     margin-right: 7px;
 }
+
 
 
 

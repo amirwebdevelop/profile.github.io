@@ -18,29 +18,7 @@ menu.addEventListener("click" , function(){
     }
 })
 
-// ////////////////////////////////////////////  profile animation  ////////////////////////////////////////////
 
-let span = $.querySelector(".Profile_information_p_span")
-let arayTitle = ["   یک طراح وب هستم   ", " توسعه دهنده وب هستم", "امیر حسین هستم  "];
-let index = 0;
-if (window.outerWidth < 768){
-    console.log("yes")
-    span.innerHTML = arayTitle[1]
-}else{
-    span.innerHTML = arayTitle[index] + " " + ' | '; // نمایش مقدار اولیه
-    setInterval(function() {
-        index += 1; // افزایش ایندکس
-        if (index > arayTitle.length - 1) {
-            index = 0; // بازنشانی ایندکس
-        }
-        span.classList.remove('fade-in');
-        setTimeout(function() {
-            span.innerHTML = arayTitle[index] + " " + ' | ';
-            span.classList.add('fade-in');
-        }, 500);
-    }, 1500);
-
-}
 
 /////////////////////////////////////////////////////////  color style  /////////////////////////////////////////////////// 
 
@@ -74,33 +52,41 @@ let isteme = false
 
 themeBtn.addEventListener("click" , function(){
     if (isteme === false){
-        themeIcon.classList.replace("far","fas")
-        theme = "light"
-        localStorage.setItem("theme",theme)
+        themeIcon.classList.replace("fa-sun","fa-moon")
         $.documentElement.style.setProperty("--color-wight","#1B2430")
         $.documentElement.style.setProperty("--color-blac","#F5F7F8")
         $.documentElement.style.setProperty("--color-blaclight","#F5F7F8")
         img[0].style.border = "1px solid gray"
         img[1].style.border = "1px solid gray"
+        theme = "light"
+        localStorage.setItem("theme",theme)
         isteme = true
     }else{
-        theme = "dark"
-        localStorage.setItem("theme",theme)
-        themeIcon.classList.replace("fas","far")
+        themeIcon.classList.replace("fa-moon","fa-sun")
         $.documentElement.style.setProperty("--color-wight","#F5F7F8")
         $.documentElement.style.setProperty("--color-blac","#1B2430")
         $.documentElement.style.setProperty("--color-blaclight","#2f353d")
+        theme = "dark"
+        localStorage.setItem("theme",theme)
         isteme = false
     }
-    console.log(theme)
+
 })
+
+
 
 window.addEventListener("load",function(){
     loder.style.display = "none"
-    let mod = localStorage.getItem("theme")
+
     let color = localStorage.getItem("color")
     $.documentElement.style.setProperty("--color-khas",color)
+
+
+    let mod = localStorage.getItem("theme")
+
+
     if(mod ===  "light"){
+        themeIcon.classList.replace("fa-sun","fa-moon")
         $.documentElement.style.setProperty("--color-wight","#1B2430")
         $.documentElement.style.setProperty("--color-blac","#F3FDE8")
         $.documentElement.style.setProperty("--color-blaclight","#F5F7F8")
@@ -108,7 +94,7 @@ window.addEventListener("load",function(){
         img[1].style.border = "1px solid gray"
         isteme = true
     }else{
-        themeIcon.classList.replace("fas","far")
+        themeIcon.classList.replace("fa-moon","fa-sun")
         $.documentElement.style.setProperty("--color-wight","#F5F7F8")
         $.documentElement.style.setProperty("--color-blac","#1B2430")
         $.documentElement.style.setProperty("--color-blaclight","#2f353d")
@@ -264,8 +250,5 @@ btn2.addEventListener('click' , function(e){
         });
     }
 })
-
-
-
 
 

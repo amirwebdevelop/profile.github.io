@@ -643,6 +643,7 @@ body{
 .section4_img {
     width: 100%;
     height: 100%;
+    border-radius: 20px;
     transition: transform 0.2s; /* انیمیشن زوم */
 }
 

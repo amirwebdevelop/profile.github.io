@@ -20,10 +20,13 @@ menu.addEventListener("click" , function(){
 
 // ////////////////////////////////////////////  profile animation  ////////////////////////////////////////////
 
-
 let span = $.querySelector(".Profile_information_p_span")
 let arayTitle = ["   یک طراح وب هستم   ", " توسعه دهنده وب هستم", "امیر حسین هستم  "];
 let index = 0;
+if (window.outerWidth < 768){
+    console.log("yes")
+    span.innerHTML = arayTitle[1]
+}else{
     span.innerHTML = arayTitle[index] + " " + ' | '; // نمایش مقدار اولیه
     setInterval(function() {
         index += 1; // افزایش ایندکس
@@ -36,6 +39,8 @@ let index = 0;
             span.classList.add('fade-in');
         }, 500);
     }, 1500);
+
+}
 
 /////////////////////////////////////////////////////////  color style  /////////////////////////////////////////////////// 
 
@@ -51,6 +56,7 @@ coloritems.forEach(function(item){
     item.addEventListener("click" , function (){
         let style = getComputedStyle(item)
         let color = style.backgroundColor
+        localStorage.setItem("color",color)
         $.documentElement.style.setProperty("--color-khas",color)
     })
 })
@@ -92,9 +98,11 @@ themeBtn.addEventListener("click" , function(){
 window.addEventListener("load",function(){
     loder.style.display = "none"
     let mod = localStorage.getItem("theme")
+    let color = localStorage.getItem("color")
+    $.documentElement.style.setProperty("--color-khas",color)
     if(mod ===  "light"){
         $.documentElement.style.setProperty("--color-wight","#1B2430")
-        $.documentElement.style.setProperty("--color-blac","#F5F7F8")
+        $.documentElement.style.setProperty("--color-blac","#F3FDE8")
         $.documentElement.style.setProperty("--color-blaclight","#F5F7F8")
         img[0].style.border = "1px solid gray"
         img[1].style.border = "1px solid gray"
@@ -104,8 +112,7 @@ window.addEventListener("load",function(){
         $.documentElement.style.setProperty("--color-wight","#F5F7F8")
         $.documentElement.style.setProperty("--color-blac","#1B2430")
         $.documentElement.style.setProperty("--color-blaclight","#2f353d")
-        isteme = false
-        
+        isteme = false   
     }
 })
 
@@ -126,12 +133,12 @@ window.addEventListener("scroll",function(){
     if (scrollNumber > 100){
         heder.classList.add("hederfix")
         if(isteme){
-            $.documentElement.style.setProperty("--color-wight2","#2f353d")
+            // $.documentElement.style.setProperty("--color-wight2","#2f353d")
         }
     }
     if(scrollNumber === 0){
         heder.classList.remove("hederfix")
-        $.documentElement.style.setProperty("--color-wight2","#F5F7F8")
+        // $.documentElement.style.setProperty("--color-wight2","#F5F7F8")
     }
 })
 
@@ -158,41 +165,107 @@ let home =$.getElementById("home")
 let information =$.getElementById("aboutme") 
 let skill =$.getElementById("skill") 
 let madarek =$.getElementById("madarek") 
-let phone =$.getElementById("phone") 
+let phone =$.getElementById("phone")
+let btn1 = $.querySelector(".btn1") 
+let btn2 = $.querySelector(".btn2") 
 
 home.addEventListener("click", function() {
-    window.scrollTo({
-        top: 0,
-        behavior: 'smooth'
-    });
+
+        window.scrollTo({
+            top: 0,
+            behavior: 'smooth'
+        });
 });
 
 information.addEventListener("click", function() {
-    window.scrollTo({
-        top: 700,
-        behavior: 'smooth'
-    });
+    if(window.innerWidth < 768){
+        window.scrollTo({
+            top: 710,
+            behavior: 'smooth'
+        });
+    }else{
+        window.scrollTo({
+            top: 700,
+            behavior: 'smooth'
+        });
+    }
 });
 
 skill.addEventListener("click", function() {
-    window.scrollTo({
-        top: 1200,
-        behavior: 'smooth'
-    });
+    if(window.innerWidth < 768){
+        window.scrollTo({
+            top: 1500,
+            behavior: 'smooth'
+        });
+
+    }else{
+        window.scrollTo({
+            top: 1200,
+            behavior: 'smooth'
+        });
+    }
 });
 
 madarek.addEventListener("click", function() {
-    window.scrollTo({
-        top: 1800,
-        behavior: 'smooth'
-    });
+    if(window.innerWidth < 768){
+        window.scrollTo({
+            top: 2500,
+            behavior: 'smooth'
+        });
+
+    }else{
+        window.scrollTo({
+            top: 1800,
+            behavior: 'smooth'
+        });
+    }
 });
 
 phone.addEventListener("click", function() {
-    window.scrollTo({
-        top: 2500,
-        behavior: 'smooth'
-    });
+    if(window.innerWidth < 768){
+        window.scrollTo({
+            top: 3450,
+            behavior: 'smooth'
+        });
+
+    }else{
+        window.scrollTo({
+            top: 2500,
+            behavior: 'smooth'
+        });
+    }
 });
+btn1.addEventListener('click' , function(e){
+    e.preventDefault()
+    if(window.innerWidth < 768){
+        window.scrollTo({
+            top: 710,
+            behavior: 'smooth'
+        });
+    }else{
+        window.scrollTo({
+            top: 700,
+            behavior: 'smooth'
+        });
+    }
+})
+btn2.addEventListener('click' , function(e){
+    e.preventDefault()
+    if(window.innerWidth < 768){
+        window.scrollTo({
+            top: 3450,
+            behavior: 'smooth'
+        });
+
+    }else{
+        window.scrollTo({
+            top: 2500,
+            behavior: 'smooth'
+        });
+    }
+})
+
+
+
 
 

@@ -298,6 +298,28 @@ btn2.addEventListener('click' , (e) => {
     }
 })
 
+//////////////////////////////////////////////// animation  //////////////////////////////////
+const sections = document.querySelectorAll('.section');
+
+const options = {
+    root: null,
+    threshold: 0.1
+};
+
+const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+        if (entry.isIntersecting) {
+            entry.target.classList.remove('hidden');
+            entry.target.classList.add('animate__animated', 'animate__fadeInUp');
+            observer.unobserve(entry.target); // برای جلوگیری از اجرای مجدد انیمیشن
+        }
+    });
+}, options);
+
+sections.forEach(section => {
+    observer.observe(section);
+});
+
 
 
 

@@ -37,6 +37,9 @@ body{
     transition:all ease 150ms;
     border-radius: 3px;
 }
+.hiden{
+    opacity: 0;
+}
 /* //////////////////////////////////////////////  loder  ///////////////////////////////////////////////// */
 .loder{
     width: 100%;

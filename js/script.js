@@ -181,10 +181,11 @@ let container = getClass(".section3_content")
 let arraySkills = [
     {id:1 , title: "HTML" , peresent: 90  ,icon:'<i class="fab fa-html5"></i>'},
     {id:2 , title: "CSS" , peresent: 90  ,icon:'<i class="fab fa-css3-alt"></i>'},
-    {id:3 , title: "JAVA SCRIPT" , peresent: 80  ,icon:'<i class="fab fa-js-square"></i>'},
-    {id:4 , title: "PYTHON" , peresent: 60  ,icon:'<i class="fab fa-python"></i>'},
-    {id:5 , title: "WEB DISIGN" , peresent: 70  ,icon:'<i class="fas fa-pencil-alt"></i>'},
-    {id:6 , title: "ICDL" , peresent: 100  ,icon:'<i class="fas fa-laptop"></i>'},
+    {id:3 , title: "JAVA SCRIPT" , peresent: 65  ,icon:'<i class="fab fa-js-square"></i>'},
+    {id:4 , title: "REACT JS" , peresent: 20  ,icon:'<i class="fab fa-react"></i>'},
+    {id:5 , title: "PYTHON" , peresent: 60  ,icon:'<i class="fab fa-python"></i>'},
+    {id:6 , title: "WEB DISIGN" , peresent: 70  ,icon:'<i class="fas fa-pencil-alt"></i>'},
+    {id:7 , title: "ICDL" , peresent: 100  ,icon:'<i class="fas fa-laptop"></i>'},
 ]
 
 arraySkills.forEach(function(item){
